@@ -43,6 +43,7 @@ done
 
 # --- correlations inside selected region
 for file_box in tas_Amon_*remap_C_regular_axis_year_anom_box.nc; do
+    echo $file_box
     cdo timcor "${file_box}" ERA5_t2m_1_2022_C_model_grid_year_anom_box.nc "timcor_${file_box}"
 
     cdo fldcor "${file_box}" ERA5_t2m_1_2022_C_model_grid_year_anom_box.nc "fldcor_${file_box}"
