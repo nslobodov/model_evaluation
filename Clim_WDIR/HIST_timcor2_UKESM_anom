@@ -1,0 +1,19 @@
+
+Fri Mar 15 19:50:21 2024: cdo timcor ERA5_t2m_1_2022_C_model_grid_anom_year1.nc tas_Amon_UKESM1-0-LL_ssp585_r1i1p1f2_185001-210012_r360x180_remap_anom.nc timcor2_tas_Amon_UKESM1-0-LL_ssp585_r1i1p1f2_185001-210012_r360x180_remap_anom.nc
+Fri Mar 15 18:36:15 2024: cdo selyear,1940/2014 ERA5_t2m_1_2022_C_model_grid_anom.nc ERA5_t2m_1_2022_C_model_grid_anom_year1.nc
+Fri Mar 15 15:23:13 2024: cdo ymonsub ERA5_t2m_1_2022_C_model_grid.nc.regular -ymonmean ERA5_t2m_1_2022_C_model_grid.nc.6190 ERA5_t2m_1_2022_C_model_grid_anom.nc
+Fri Mar 15 15:22:19 2024: cdo -f nc -remapbil,r360x180 ERA5_t2m_1_2022_C_model_grid.nc ERA5_t2m_1_2022_C_model_grid.nc.regular
+Mon Mar 11 19:01:57 2024: cdo interpolate,model.grid ERA5_t2m_1_2022_C.nc ERA5_t2m_1_2022_C_model_grid.nc
+Wed Sep 27 12:07:06 2023: cdo -b f64 addc,-273.15 ERA5_t2m_1_2022.nc ERA5_t2m_1_2022_C.nc
+Wed Sep 27 12:05:51 2023: cdo selyear,1940/2022 ERA5_t2m_1.nc ERA5_t2m_1_2022.nc
+Wed Sep 27 12:04:33 2023: cdo sellevel,1 ERA5_t2m.nc ERA5_t2m_1.nc
+Wed Sep 27 10:26:53 2023: cdo selvar,t2m adaptor.mars.internal-1695759123.385849-3624-7-6f0f449c-5b3d-4caf-b4d4-ac64924d7012.nc ERA5_t2m.nc
+2023-09-26 20:16:03 GMT by grib_to_netcdf-2.25.1: /opt/ecmwf/mars-client/bin/grib_to_netcdf.bin -S param -o /cache/data2/adaptor.mars.internal-1695759123.385849-3624-7-6f0f449c-5b3d-4caf-b4d4-ac64924d7012.nc /cache/tmp/6f0f449c-5b3d-4caf-b4d4-ac64924d7012-adaptor.mars.internal-1695758495.1070752-3624-14-tmp.grib
+
+# Последовательность обработки:
+# ERA5_t2m_1.nc ERA5_t2m_1_2022.nc >> cdo -b f64 addc,-273.15
+# cdo interpolate,model.grid ERA5_t2m_1_2022_C.nc
+# cdo -f nc -remapbil,r360x180 ERA5_t2m_1_2022_C_model_grid.nc
+# cdo ymonsub ERA5_t2m_1_2022_C_model_grid.nc.regular -ymonmean ERA5_t2m_1_2022_C_model_grid.nc.6190 ERA5_t2m_1_2022_C_model_grid_anom.nc
+# cdo selyear,1940/2014
+# cdo timcor ERA5_t2m_1_2022_C_model_grid_anom_year1.nc tas_Amon_UKESM1-0-LL_ssp585_r1i1p1f2_185001-210012_r360x180_remap_anom.nc
