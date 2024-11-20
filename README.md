@@ -1,4 +1,4 @@
-# Model_evaluation
+# Model evaluation
 Приложение. Материалы для курсовой работы 2 курса.
 
 Evaluation of 38 CMIP6 models during the historical period (1940-2014) against ERA5 reanalysis.\
